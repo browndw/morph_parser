@@ -1,0 +1,30 @@
+{
+  "entries": [
+    {"word": "agreement", "segments": ["agree", "ment"]},
+    {"word": "biggest", "segments": ["big", "est"]},
+    {"word": "bigger", "segments": ["big", "er"]},
+    {"word": "careless", "segments": ["care", "less"]},
+    {"word": "darkness", "segments": ["dark", "ness"]},
+    {"word": "dogs", "segments": ["dog", "s"]},
+    {"word": "faster", "segments": ["fast", "er"]},
+    {"word": "fastest", "segments": ["fast", "est"]},
+    {"word": "friendship", "segments": ["friend", "ship"]},
+    {"word": "government", "segments": ["govern", "ment"]},
+    {"word": "happiness", "segments": ["happy", "ness"]},
+    {"word": "houses", "segments": ["house", "s"]},
+    {"word": "kindness", "segments": ["kind", "ness"]},
+    {"word": "legalize", "segments": ["legal", "ize"]},
+    {"word": "modernize", "segments": ["modern", "ize"]},
+    {"word": "painted", "segments": ["paint", "ed"]},
+    {"word": "painting", "segments": ["paint", "ing"]},
+    {"word": "quickly", "segments": ["quick", "ly"]},
+    {"word": "runner", "segments": ["run", "er"]},
+    {"word": "safer", "segments": ["safe", "er"]},
+    {"word": "slowly", "segments": ["slow", "ly"]},
+    {"word": "teacher", "segments": ["teach", "er"]},
+    {"word": "walked", "segments": ["walk", "ed"]},
+    {"word": "walking", "segments": ["walk", "ing"]},
+    {"word": "worked", "segments": ["work", "ed"]},
+    {"word": "working", "segments": ["work", "ing"]}
+  ]
+}
