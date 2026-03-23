@@ -1,0 +1,55 @@
+---
+title: "Technical Notes"
+jupyter: python3
+---
+
+## Version 0.2.0 Changes
+
+### Lightweight Dependencies
+
+Starting with version 0.2.0, morph_parser has been redesigned to use minimal dependencies while maintaining full functionality. The package now includes custom implementations that replace the previous dependencies on scipy and statsmodels.
+
+#### What Changed
+
+- **Hierarchical Clustering**: Custom implementation in `vnc_helpers.py` replaces scipy's clustering functions
+- **Smoothing**: Cubic regression splines with ridge regularization in `scatter_helpers.py` replace statsmodels GAM fitting
+- **Package Size**: Significantly reduced installation footprint
+- **Performance**: Maintained or improved performance for core VNC and smoothing operations
+
+#### Benefits
+
+1. **Faster Installation**: No need to install large scientific computing libraries if you only need morph_parser functionality
+2. **Reduced Conflicts**: Fewer dependency conflicts in virtual environments
+3. **Consistent Behavior**: Custom implementations ensure consistent results across different platforms
+4. **Maintained Functionality**: All user-facing functions work exactly the same way
+
+#### Supported Methods
+
+The package continues to support all the same visualization and analysis methods:
+
+- `timeviz_vnc()` - Variability-based neighbor clustering dendrograms
+- `timeviz_scatterplot()` - Scatterplots with smoothed fits using cubic splines
+- `timeviz_barplot()` - Bar plots for frequency data
+- `timeviz_screeplot()` - Scree plots for cluster analysis
+- `cluster_summary()` - Cluster analysis results
+
+### Implementation Details
+
+#### VNC Clustering
+
+The VNC implementation follows Gries and Hilpert's original methodology exactly:
+
+- Distances calculated using standard deviations or coefficients of variation
+- Hierarchical clustering maintains leaf order for periodization analysis
+- Custom dendrogram truncation preserves temporal relationships
+
+#### Cubic Spline Smoothing  
+
+The smoothing implementation uses:
+
+- Truncated power basis with interior knots
+- Ridge regularization for stability
+- Bootstrap confidence intervals
+- Automatic handling of edge cases and numerical stability
+
+These technical details are transparent to users - all functions work the same way as before, just with a lighter dependency footprint.

@@ -1,0 +1,82 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "morph_parser"
+  description: "Fetch and analyze Google Ngram data for specified word forms."
+  page-navigation: true
+  favicon: "favicon.ico"
+  navbar:
+    background: light
+    pinned: true
+    logo: logo.png
+    left:
+      - text: "Get started"
+        file: get-started.qmd
+      - text: "TimeSeries"
+        file: time-series.qmd
+      - text: "Technical Notes"
+        file: technical-notes.qmd
+      - text: "Reference"
+        file: reference/index.qmd
+      - text: Learn more
+        menu:
+          - text: "Learn more about VNC"
+            href: https://www.stgries.info/research/2012_STG-MH_VarNeighbClustering_OxfHBHistEngl.pdf
+            target: _blank
+    right:
+      - icon: github
+        href: https://github.com/browndw/morph_parser
+        aria-label: morph_parser on GitHub
+  sidebar:
+    style: "floating"
+    collapse-level: 1
+    contents:
+      - section: Fetching Data
+        contents:
+          - text: "`google_ngram`"
+            href: reference/google_ngram.qmd
+      - section: Time Series
+        contents:
+          - text: "`timeviz_barplot`"
+            href: reference/timeviz_barplot.qmd
+          - text: "`timeviz_scatterplot`"
+            href: reference/timeviz_scatterplot.qmd
+          - text: "`timeviz_screeplot`"
+            href: reference/timeviz_screeplot.qmd
+          - text: "`timeviz_vnc`"
+            href: reference/timeviz_vnc.qmd
+          - text: "`cluster_summary`"
+            href: reference/cluster_summary.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    sidebar: false
+
+quartodoc:
+  title: Reference
+  package: google-ngrams
+  sections:
+    - title: morph_parser fetch function
+      desc: "Read in Google n-gram data"
+      package: morph_parser.ngrams
+      contents:
+        - google_ngram
+    - title: morph_parser TimeSeries
+      desc: "Analyze time series data"
+      package: morph_parser.TimeSeries
+      contents:
+        - timeviz_barplot
+        - timeviz_scatterplot
+        - timeviz_screeplot
+        - timeviz_vnc
+        - cluster_summary
+
+filters:
+  - interlinks
+
+interlinks:
+  sources: {}
