@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "morph-parser"
+version = "0.1.0"
+description = "Inference-focused morphological parser for ByT5 morph segmentation models"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "David Brown" }]
+dependencies = [
+  "torch>=2.3",
+  "transformers>=4.43",
+  "sentencepiece>=0.1.99",
+  "polars>=1.0",
+  "scipy>=1.11"
+]
+
+[project.scripts]
+morph-parser = "morph_parser.cli:main"
+morph-audit-data = "morph_parser.prep.audit_data:main"
+morph-audit-wiktionary = "morph_parser.prep.audit_wiktionary:main"
+morph-build-training-data = "morph_parser.prep.build_training_data:main"
+morph-candidate-inventory = "morph_parser.prep.candidate_inventory:main"
+morph-build-affix-resource-map = "morph_parser.prep.build_affix_resource_map:main"
+morph-build-seed-parse-cache = "morph_parser.prep.build_seed_parse_cache:main"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["morph_parser*"]
+
+[tool.setuptools.package-data]
+morph_parser = ["resources/*.json"]
+
+[project.optional-dependencies]
+prep = [
+  "duckdb>=1.0",
+  "datasets>=2.20",
+  "accelerate>=0.30",
+  "evaluate>=0.4.3",
+  "tqdm>=4.66",
+  "rich>=13.7",
+  "ijson>=3.2",
+  "huggingface_hub>=0.24"
+]
+dev = [
+  "pytest>=8.0"
+]
