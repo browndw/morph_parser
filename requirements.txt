@@ -1,0 +1,19 @@
+# Core numerical stack
+numpy>=1.26
+pandas>=2.2
+scikit-learn>=1.4
+
+# Deep learning and Hugging Face ecosystem
+torch>=2.3
+transformers>=4.43
+datasets>=2.20
+accelerate>=0.30
+evaluate>=0.4.3
+sentencepiece>=0.1.99
+
+# Training ergonomics
+tqdm>=4.66
+rich>=13.7
+
+# Large JSON streaming
+ijson>=3.2
